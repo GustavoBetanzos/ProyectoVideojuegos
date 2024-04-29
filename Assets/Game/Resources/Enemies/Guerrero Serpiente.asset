@@ -21,11 +21,11 @@ MonoBehaviour:
   attack: 8
   defense: 4
   learnableMoves:
-  - moveBase: {fileID: 0}
+  - moveBase: {fileID: 11400000, guid: b0fb5df7175889c469ab9ea6553036b2, type: 2}
     level: 0
-  - moveBase: {fileID: 0}
+  - moveBase: {fileID: 11400000, guid: 2925a625b38b0aa4d9a5f03ac65bb4d6, type: 2}
     level: 0
-  - moveBase: {fileID: 0}
+  - moveBase: {fileID: 11400000, guid: de0b8551f94bab8419fe48b39262f2f0, type: 2}
     level: 0
-  - moveBase: {fileID: 0}
+  - moveBase: {fileID: 11400000, guid: c289e88b239091d448a7fe37c8326061, type: 2}
     level: 0

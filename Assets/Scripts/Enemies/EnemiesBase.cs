@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName="Enemie", menuName ="Enemie/Create new enemie" )]
 public class EnemiesBase : ScriptableObject{
-    [SerializeField] string name;
+    [SerializeField] string enemyName;
 
     [TextArea]
     [SerializeField] string description;
@@ -15,8 +15,8 @@ public class EnemiesBase : ScriptableObject{
     [SerializeField] int defense;
 
     [SerializeField] List<LearnableMove> learnableMoves;
-    public string Name{
-        get{return name;}
+    public string NameEnemy{
+        get{return enemyName;}
     }
 
     public string Description{
