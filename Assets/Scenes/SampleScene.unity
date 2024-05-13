@@ -337,8 +337,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -94.36, y: 2.83}
-  m_SizeDelta: {x: 590.3, y: 103.6}
+  m_AnchoredPosition: {x: -196, y: 31.279995}
+  m_SizeDelta: {x: 369.07, y: 62.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &204053190
 MonoBehaviour:
@@ -381,7 +381,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204053188}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
 --- !u!1 &275208161
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,6 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _base: {fileID: 11400000, guid: 466c926d647e245469492b6147c262a8, type: 2}
   level: 1
+  isPlayerUnit: 0
 --- !u!1 &319246623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,6 +1279,7 @@ GameObject:
   - component: {fileID: 699647151}
   - component: {fileID: 699647153}
   - component: {fileID: 699647152}
+  - component: {fileID: 699647154}
   m_Layer: 0
   m_Name: DialogBox
   m_TagString: Untagged
@@ -1345,6 +1347,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699647150}
   m_CullTransparentMesh: 1
+--- !u!114 &699647154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699647150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd9ed8b507d78746af4cbfb39379827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogText: {fileID: 0}
+  letterPerSecond: 0
 --- !u!1 &773921113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,6 +1545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _base: {fileID: 11400000, guid: 406ce9a6838a42e4eb0470e9340c26a8, type: 2}
   level: 1
+  isPlayerUnit: 0
 --- !u!1 &901194455
 GameObject:
   m_ObjectHideFlags: 0
@@ -8484,6 +8501,7 @@ MonoBehaviour:
   enemyUnit: {fileID: 795180495}
   playerHud: {fileID: 566001350}
   enemyHud: {fileID: 126302764}
+  dialogBox: {fileID: 699647154}
 --- !u!1 &1714102980
 GameObject:
   m_ObjectHideFlags: 0

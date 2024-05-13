@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName="Enemie", menuName ="Enemie/Create new enemie" )]
-public class EnemiesBase : ScriptableObject{
+
+[CreateAssetMenu(fileName = "Enemy", menuName = "Enemy/Create new enemy")]
+public class EnemiesBase : ScriptableObject
+{
     [SerializeField] string enemyName;
 
     [TextArea]
     [SerializeField] string description;
-    
+
     [SerializeField] Sprite frontSprite;
 
     [SerializeField] int maxHp;
@@ -15,45 +17,56 @@ public class EnemiesBase : ScriptableObject{
     [SerializeField] int defense;
 
     [SerializeField] List<LearnableMove> learnableMoves;
-    public string NameEnemy{
-        get{return enemyName;}
+
+    public string NameEnemy
+    {
+        get { return enemyName; }
     }
 
-    public string Description{
-        get{return description;}
+    public string Description
+    {
+        get { return description; }
     }
 
-   public Sprite FrontSprite{
-    get{return frontSprite;}
-   }
-    public int MaxHp{
-        get{return maxHp;}
+    public Sprite FrontSprite
+    {
+        get { return frontSprite; }
     }
 
-    public int Attack{
-        get{return attack;}
+    public int MaxHp
+    {
+        get { return maxHp; }
     }
 
-    public int Defense{
-        get{return defense;}
+    public int Attack
+    {
+        get { return attack; }
     }
 
-    public List<LearnableMove> LearnableMoves{
-        get{return learnableMoves;}
+    public int Defense
+    {
+        get { return defense; }
     }
-    
+
+    public List<LearnableMove> LearnableMoves
+    {
+        get { return learnableMoves; }
+    }
 }
 
-    [System.Serializable]
-    public class LearnableMove{
-       [SerializeField] MoveBase moveBase;
-       [SerializeField] int level;
+[System.Serializable]
+public class LearnableMove
+{
+    [SerializeField] MoveBase moveBase;
+    [SerializeField] int level;
 
-        public MoveBase Base{
-        get{return moveBase;}
-       }
-
-       public int Level{
-        get{return level;}
-       }
+    public MoveBase Base
+    {
+        get { return moveBase; }
     }
+
+    public int Level
+    {
+        get { return level; }
+    }
+}

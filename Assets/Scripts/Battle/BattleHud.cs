@@ -11,8 +11,10 @@ public class BattleHud : MonoBehaviour
 
     public void SetData(Enemie enemie){
         nameText.text = enemie.Base.NameEnemy;
-        levelText.text = "Nivel" + enemie.Level;
+        levelText.text = "Nivel " + enemie.Level;
         hpBar.SetHP((float)enemie.HP / enemie.MaxHp);
+        Debug.Log("Nombre del enemigo: " + enemie.Base.NameEnemy);
+        Debug.Log("Nivel del enemigo: " + enemie.Level);
     }
 
 }
