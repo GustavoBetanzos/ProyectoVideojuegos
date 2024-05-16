@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3613dc3b702e5547bd2edd72c29e041, type: 3}
   m_Name: Rey Demonio
   m_EditorClassIdentifier: 
-  name: Rey Demonio
+  enemyName: Rey Demonio
   description: "El gobernante del inframundo, un ser de pura maldad y destrucci\xF3n.
     \rSu presencia corrompe todo a su alrededor y su poder es suficiente para desafiar
     a \r\nlos dioses.\r"
@@ -22,10 +22,10 @@ MonoBehaviour:
   defense: 14
   learnableMoves:
   - moveBase: {fileID: 11400000, guid: 387dedb06e72d8e45be9cd1fd814f05b, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: 8b3c1ccce96269a4484b674c15cc5b3b, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: a9ed1af55258a6e439611485ec990d7c, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: 7c03606eb7dd37542aef0f38486d4e25, type: 2}
-    level: 0
+    level: 1

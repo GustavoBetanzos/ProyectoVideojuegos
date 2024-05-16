@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
   m_Name: "Estrangulaci\xF3n Constrictora"
   m_EditorClassIdentifier: 
-  name: "Estrangulaci\xF3n Constrictora"
+  moveName: "Estrangulaci\xF3n Constrictora"
   power: 10
   accuracy: 100
   pp: 8

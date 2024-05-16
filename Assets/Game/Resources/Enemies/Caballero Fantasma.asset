@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3613dc3b702e5547bd2edd72c29e041, type: 3}
   m_Name: Caballero Fantasma
   m_EditorClassIdentifier: 
-  name: Caballero Fantasma
+  enemyName: Caballero Fantasma
   description: "Un guerrero fantasmal con armadura negra y una espada et\xE9rea que
     \rcorta el alma misma. Ha jurado proteger el reino de los muertos y eliminar
     a cualquier intruso.\r"
@@ -22,10 +22,10 @@ MonoBehaviour:
   defense: 25
   learnableMoves:
   - moveBase: {fileID: 11400000, guid: a55d614b31d1185488384a91292a91d7, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: 7c916a74d540df747bc3d08dfbba0065, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: bb28f92ac190bc248a3a27f288c9e277, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: 7c03606eb7dd37542aef0f38486d4e25, type: 2}
-    level: 0
+    level: 1

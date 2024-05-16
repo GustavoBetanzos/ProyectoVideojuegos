@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
   m_Name: "Hacha demon\xEDaca"
   m_EditorClassIdentifier: 
-  name: "Hacha demon\xEDaca"
+  moveName: "Hacha demon\xEDaca"
   power: 18
   accuracy: 100
   pp: 15

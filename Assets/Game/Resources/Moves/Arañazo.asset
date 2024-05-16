@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
   m_Name: "Ara\xF1azo"
   m_EditorClassIdentifier: 
-  name: "Ara\xF1azo"
+  moveName: "Ara\xF1azo"
   power: 8
   accuracy: 100
   pp: 20

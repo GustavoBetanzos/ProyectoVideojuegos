@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
   m_Name: Cataclismo final
   m_EditorClassIdentifier: 
-  name: Cataclismo final
+  moveName: Cataclismo final
   power: 35
   accuracy: 60
   pp: 10

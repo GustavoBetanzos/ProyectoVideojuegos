@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
   m_Name: "Pu\xF1o de magma"
   m_EditorClassIdentifier: 
-  name: "Pu\xF1o de magma"
+  moveName: "Pu\xF1\xF1o de magma"
   power: 10
   accuracy: 100
   pp: 15

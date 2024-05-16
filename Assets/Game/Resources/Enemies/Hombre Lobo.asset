@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3613dc3b702e5547bd2edd72c29e041, type: 3}
   m_Name: Hombre Lobo
   m_EditorClassIdentifier: 
-  name: Hombre Lobo
+  enemyName: Hombre Lobo
   description: "Una bestia feroz con aspecto humanoide, cubierta de pelaje oscuro
     y\r ojos brillantes. Sus garras afiladas y su velocidad lo hacen un enemigo temible
     en la oscuridad de la noche, asegurate de no ser su objetivo o no tendr\xE1s
@@ -23,10 +23,10 @@ MonoBehaviour:
   defense: 5
   learnableMoves:
   - moveBase: {fileID: 11400000, guid: 2925a625b38b0aa4d9a5f03ac65bb4d6, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: 7d7ee08b2aaab8b4fb3a900879fb824c, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: 10afbc364a6959a45b5ab0b9408c6ffe, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: 0412425bcdb92c94fb548e87a59469a6, type: 2}
-    level: 0
+    level: 1

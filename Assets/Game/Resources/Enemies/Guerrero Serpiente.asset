@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3613dc3b702e5547bd2edd72c29e041, type: 3}
   m_Name: Guerrero Serpiente
   m_EditorClassIdentifier: 
-  name: Guerrero Serpiente
+  enemyName: Guerrero Serpiente
   description: "Un audaz guerrero que no tiene piedad con sus enemigos, debido a
     su naturaleza como depredador, es un guerrero capaz de usar diferente tipo de
     armas, pero su preferida es su espada la cual siempre est\xE1 empapada de sangre."
@@ -22,10 +22,10 @@ MonoBehaviour:
   defense: 4
   learnableMoves:
   - moveBase: {fileID: 11400000, guid: b0fb5df7175889c469ab9ea6553036b2, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: 2925a625b38b0aa4d9a5f03ac65bb4d6, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: de0b8551f94bab8419fe48b39262f2f0, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: c289e88b239091d448a7fe37c8326061, type: 2}
-    level: 0
+    level: 1

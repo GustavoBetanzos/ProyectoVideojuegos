@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
   m_Name: Tacleada feroz
   m_EditorClassIdentifier: 
-  name: Tacleada feroz
+  moveName: Tacleada feroz
   power: 9
   accuracy: 85
   pp: 15

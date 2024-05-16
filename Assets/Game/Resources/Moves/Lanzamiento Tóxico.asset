@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
   m_Name: "Lanzamiento T\xF3xico"
   m_EditorClassIdentifier: 
-  name: "Lanzamiento T\xF3xico "
+  moveName: "Lanzamiento T\xF3xico"
   power: 12
   accuracy: 80
   pp: 15

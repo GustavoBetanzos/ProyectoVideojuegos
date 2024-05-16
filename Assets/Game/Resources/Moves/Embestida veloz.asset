@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
   m_Name: Embestida veloz
   m_EditorClassIdentifier: 
-  name: Embestida veloz
+  moveName: Embestida veloz
   power: 8
   accuracy: 90
   pp: 15

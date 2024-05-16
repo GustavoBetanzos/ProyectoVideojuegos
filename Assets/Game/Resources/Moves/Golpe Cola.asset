@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
   m_Name: Golpe Cola
   m_EditorClassIdentifier: 
-  name: Golpe Cola
+  moveName: Golpe Cola
   power: 8
   accuracy: 100
   pp: 20

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
   m_Name: "Embestida \xCDgnea"
   m_EditorClassIdentifier: 
-  name: "Embestida \xCDgnea"
+  moveName: "Embestida \xCDgnea"
   power: 11
   accuracy: 95
   pp: 15

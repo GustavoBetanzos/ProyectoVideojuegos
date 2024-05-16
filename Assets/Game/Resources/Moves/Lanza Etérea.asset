@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
   m_Name: "Lanza Et\xE9rea"
   m_EditorClassIdentifier: 
-  name: "Lanza Et\xE9rea"
+  moveName: "Lanza Et\xE9rea"
   power: 18
   accuracy: 100
   pp: 15

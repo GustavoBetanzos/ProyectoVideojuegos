@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
   m_Name: "B\xE1culo veloz"
   m_EditorClassIdentifier: 
-  name: "B\xE1culo veloz"
+  moveName: "B\xE1culo veloz"
   power: 7
   accuracy: 100
   pp: 20

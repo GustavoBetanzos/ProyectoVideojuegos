@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3613dc3b702e5547bd2edd72c29e041, type: 3}
   m_Name: Monstruo de lava
   m_EditorClassIdentifier: 
-  name: Monstruo de lava
+  enemyName: Monsstruo de lava
   description: "Una criatura nacida del fuego y la roca del mismo infierno. Su piel
     est\xE1 \r constantemente ardiendo y sus ataques son capaces de derretir el metal
     m\xE1s resistente.\r"
@@ -22,10 +22,10 @@ MonoBehaviour:
   defense: 7
   learnableMoves:
   - moveBase: {fileID: 11400000, guid: 0827ef5c592e4b046ab08503e61ea997, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: a9ed1af55258a6e439611485ec990d7c, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: e950c95ea9322de4885f38cec267f822, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: 387dedb06e72d8e45be9cd1fd814f05b, type: 2}
-    level: 0
+    level: 1

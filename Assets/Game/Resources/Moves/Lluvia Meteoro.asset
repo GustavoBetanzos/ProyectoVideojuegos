@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
   m_Name: Lluvia Meteoro
   m_EditorClassIdentifier: 
-  name: Lluvia Meteoro
+  moveName: Lluvia Meteoro
   power: 15
   accuracy: 80
   pp: 10

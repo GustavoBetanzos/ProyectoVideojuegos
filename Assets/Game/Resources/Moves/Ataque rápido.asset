@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
   m_Name: "Ataque r\xE1pido"
   m_EditorClassIdentifier: 
-  name: "Ataque r\xE1pido"
+  moveName: "Ataque r\xE1pido"
   power: 6
   accuracy: 100
   pp: 25

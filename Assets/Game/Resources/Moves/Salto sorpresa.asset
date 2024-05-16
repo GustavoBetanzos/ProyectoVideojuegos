@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
   m_Name: Salto sorpresa
   m_EditorClassIdentifier: 
-  name: Salto sorpresa
+  moveName: Salto sorpresa
   power: 15
   accuracy: 75
   pp: 5

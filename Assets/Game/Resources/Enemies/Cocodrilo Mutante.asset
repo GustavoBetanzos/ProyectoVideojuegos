@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3613dc3b702e5547bd2edd72c29e041, type: 3}
   m_Name: Cocodrilo Mutante
   m_EditorClassIdentifier: 
-  name: Cocodrilo Mutante
+  enemyName: Cododrilo Mutante
   description: "Un enorme cocodrilo que con una fuerza incre\xEDble, de tama\xF1o
     y \r ferocidad no comprensibles para este mundo. Sus mand\xEDbulas son capaces
     de\r destrozar incluso el acero m\xE1s resistente.\r"
@@ -22,10 +22,10 @@ MonoBehaviour:
   defense: 8
   learnableMoves:
   - moveBase: {fileID: 11400000, guid: 10afbc364a6959a45b5ab0b9408c6ffe, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: 27822bc995edb964989555f0be487455, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: c5a0f3a9011b7b94fb6b5a350b387898, type: 2}
-    level: 0
+    level: 1
   - moveBase: {fileID: 11400000, guid: e993bd875d160f94b88d0307fae73edb, type: 2}
-    level: 0
+    level: 1
