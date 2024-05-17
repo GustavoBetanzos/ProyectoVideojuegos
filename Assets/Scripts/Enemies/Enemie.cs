@@ -53,9 +53,20 @@ public class Enemie
         }
     }
 
-    public bool TakeDamage(Move move, Enemie attacker){
+    public DamageDetails TakeDamage(Move move, Enemie attacker){
+        float critical = 1f;
+        
+        if(Random.value *100f <= 6.25f){
+            critical=2f;
+        }
 
-        //if(Random.value *100f <= 6.25f)
+        var damageDetails = new DamageDetails()
+        {
+            Critical=critical,
+            Fainted = false
+        };
+
+
         float modifiers = Random.Range(0.85f, 1f);
         float a = (2*attacker.Level+10)/250f;
         float d = a*move.Base.Power * ((float)attacker.Attack / Defense)+2;
@@ -64,14 +75,19 @@ public class Enemie
         HP -= damage;
         if(HP<=0){
             HP=0;
-            return true;
+            damageDetails.Fainted=true;
         } 
 
-        return false;
+        return damageDetails;
     }
 
     public Move GetRandomMove(){
         int r =Random.Range(0,Moves.Count);
         return Moves[r];
     }
+}
+
+public class DamageDetails{
+    public bool Fainted {get; set;}
+    public float Critical {get; set;}
 }

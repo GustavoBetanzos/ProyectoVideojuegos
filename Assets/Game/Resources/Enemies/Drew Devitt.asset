@@ -15,9 +15,9 @@ MonoBehaviour:
   enemyName: Drew Devitt
   description: Jugador
   frontSprite: {fileID: 21300000, guid: 5e4039da3f755e4459f9ecc15a974212, type: 3}
-  maxHp: 20
-  attack: 5
-  defense: 5
+  maxHp: 25
+  attack: 7
+  defense: 7
   learnableMoves:
   - moveBase: {fileID: 11400000, guid: 0412425bcdb92c94fb548e87a59469a6, type: 2}
     level: 1

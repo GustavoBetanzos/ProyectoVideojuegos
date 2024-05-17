@@ -25,7 +25,6 @@ public class BattleSystem : MonoBehaviour
         enemyHud.SetData(enemyUnit.Enemie);
         dialogBox.SetMoveNames(playerUnit.Enemie.Moves);
         yield return dialogBox.TypeDialog($"Un {enemyUnit.Enemie.Base.NameEnemy} ha aparecido.");
-        yield return new WaitForSeconds(1f);
         PlayerAction();
     }
 
@@ -48,12 +47,18 @@ public class BattleSystem : MonoBehaviour
 
         var move = playerUnit.Enemie.Moves[currentAction];
         yield return dialogBox.TypeDialog($"{playerUnit.Enemie.Base.NameEnemy} ha usado {move.Base.Name}");
+
+        playerUnit.PlayAttackAnimation();
         yield return new WaitForSeconds(1f);
 
-        bool isFainted = enemyUnit.Enemie.TakeDamage(move, playerUnit.Enemie);
+        enemyUnit.PlayHitAnimation();
+
+        var damageDetails = enemyUnit.Enemie.TakeDamage(move, playerUnit.Enemie);
         yield return enemyHud.UpdateHP();
-        if (isFainted){
+        yield return ShowDamageDetails(damageDetails);
+        if (damageDetails.Fainted){
             yield return dialogBox.TypeDialog($"{enemyUnit.Enemie.Base.NameEnemy} ha sido vencido.");
+            enemyUnit.PlayFaintAnimation();
         }else{
             StartCoroutine(EnemyMove());
         }
@@ -63,17 +68,29 @@ public class BattleSystem : MonoBehaviour
         state=BattleState.EnemyMove;
         var move = enemyUnit.Enemie.GetRandomMove();
         yield return dialogBox.TypeDialog($"{enemyUnit.Enemie.Base.NameEnemy} ha usado {move.Base.Name}");
+
+        enemyUnit.PlayAttackAnimation();
         yield return new WaitForSeconds(1f);
 
-        bool isFainted = playerUnit.Enemie.TakeDamage(move, playerUnit.Enemie); //cambiar el ultimo player por enemy
+        playerUnit.PlayHitAnimation();
+        
+
+        var damageDetails = playerUnit.Enemie.TakeDamage(move, playerUnit.Enemie); //cambiar el ultimo player por enemy
         yield return playerHud.UpdateHP();
-        if (isFainted){
+        yield return ShowDamageDetails(damageDetails);
+        if (damageDetails.Fainted){
             yield return dialogBox.TypeDialog($"{playerUnit.Enemie.Base.NameEnemy} ha sido vencido.");
+            playerUnit.PlayFaintAnimation();
         }else{
             PlayerAction();
         }
     }
 
+    IEnumerator ShowDamageDetails(DamageDetails damageDetails){
+        if(damageDetails.Critical > 1f){
+            yield return dialogBox.TypeDialog("Ese ataque ha sido más fuerte de lo normal.");
+        }
+    }   
     private void Update(){
         if(state==BattleState.PlayerAction){
             HandleActionSelector();
