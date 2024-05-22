@@ -16,7 +16,7 @@ MonoBehaviour:
   description: "Un peque\xF1o y \xE1gil duende, que porta un cuchillo y un escudo,
     parece\r d\xE9bil, pero si te descuidas te dominar\xE1 con su agilidad. "
   frontSprite: {fileID: 21300000, guid: 5cc7c2ba5c07bfd49b39390bc350bab3, type: 3}
-  maxHp: 20
+  maxHp: 15
   attack: 5
   defense: 5
   learnableMoves:

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,10 +12,11 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleHud enemyHud;
     [SerializeField] BattleDialogBox dialogBox;
 
+    public event Action<bool> OnBattleOver;
     BattleState state;
     int currentAction;
     int currentMove;
-    private void Start(){
+    public void StartBattle(){
         StartCoroutine(SetUpBattle());
     }
 
@@ -46,6 +48,7 @@ public class BattleSystem : MonoBehaviour
         state =BattleState.Busy;
 
         var move = playerUnit.Enemie.Moves[currentAction];
+        move.Pp--;
         yield return dialogBox.TypeDialog($"{playerUnit.Enemie.Base.NameEnemy} ha usado {move.Base.Name}");
 
         playerUnit.PlayAttackAnimation();
@@ -59,6 +62,8 @@ public class BattleSystem : MonoBehaviour
         if (damageDetails.Fainted){
             yield return dialogBox.TypeDialog($"{enemyUnit.Enemie.Base.NameEnemy} ha sido vencido.");
             enemyUnit.PlayFaintAnimation();
+            yield return new WaitForSeconds(2f);
+            OnBattleOver(true);
         }else{
             StartCoroutine(EnemyMove());
         }
@@ -67,6 +72,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EnemyMove(){
         state=BattleState.EnemyMove;
         var move = enemyUnit.Enemie.GetRandomMove();
+        move.Pp--;
         yield return dialogBox.TypeDialog($"{enemyUnit.Enemie.Base.NameEnemy} ha usado {move.Base.Name}");
 
         enemyUnit.PlayAttackAnimation();
@@ -81,6 +87,8 @@ public class BattleSystem : MonoBehaviour
         if (damageDetails.Fainted){
             yield return dialogBox.TypeDialog($"{playerUnit.Enemie.Base.NameEnemy} ha sido vencido.");
             playerUnit.PlayFaintAnimation();
+            yield return new WaitForSeconds(2f);
+            OnBattleOver(false);
         }else{
             PlayerAction();
         }
@@ -91,7 +99,7 @@ public class BattleSystem : MonoBehaviour
             yield return dialogBox.TypeDialog("Ese ataque ha sido más fuerte de lo normal.");
         }
     }   
-    private void Update(){
+    public void HandleUpdate(){
         if(state==BattleState.PlayerAction){
             HandleActionSelector();
         }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask solidObjectsLayer;
     public LayerMask stoneLayer;    
 
+    public event Action OnEncountered;
     private bool isMoving;
     private Vector2 input;
 
@@ -16,12 +18,7 @@ public class PlayerController : MonoBehaviour
     private void Awake(){
         animator = GetComponent<Animator>();
     }
-
-    void Start(){
-        
-    }
-    
-    private void Update(){
+    public void HandleUpdate(){
         if(!isMoving){
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
@@ -53,7 +50,7 @@ public class PlayerController : MonoBehaviour
         }
         transform.position = targetPos;
         isMoving =false;
-        Enfrentamientos();
+        CheckForEncounters();
     }
 
     private bool isWalkable(Vector3 targetPos){
@@ -63,10 +60,11 @@ public class PlayerController : MonoBehaviour
         return true;
     }
 
-    private void Enfrentamientos(){
+    private void CheckForEncounters(){
         if(Physics2D.OverlapCircle(transform.position, 0.2f, stoneLayer) !=null){
-            if (Random.Range(1, 101)<=10){
-                Debug.Log("Un monstruo ha aparecido");
+            if (UnityEngine.Random.Range(1, 101)<=10){
+                animator.SetBool("isMoving",false);
+                OnEncountered();
             }
         }   
     }

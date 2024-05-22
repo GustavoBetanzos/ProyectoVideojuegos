@@ -27,7 +27,8 @@ public class BattleUnit : MonoBehaviour
         if(isPlayerUnit){
             image.sprite = Enemie.Base.FrontSprite;
         }
-            image.sprite = Enemie.Base.FrontSprite;
+        
+        image.color=originalColor;
         
         PlayerEnterAnimation();
     }

@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Jugador
   frontSprite: {fileID: 21300000, guid: 5e4039da3f755e4459f9ecc15a974212, type: 3}
   maxHp: 25
-  attack: 7
+  attack: 8
   defense: 7
   learnableMoves:
   - moveBase: {fileID: 11400000, guid: 0412425bcdb92c94fb548e87a59469a6, type: 2}
