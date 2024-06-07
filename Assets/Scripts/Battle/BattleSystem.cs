@@ -16,13 +16,18 @@ public class BattleSystem : MonoBehaviour
     BattleState state;
     int currentAction;
     int currentMove;
-    public void StartBattle(){
+
+    Enemie wildEnemie;
+    TeamDrew team;
+    public void StartBattle(TeamDrew team, Enemie wildEnemie){
+        this.wildEnemie = wildEnemie;
+        this.team = team;
         StartCoroutine(SetUpBattle());
     }
 
     public IEnumerator SetUpBattle(){
-        playerUnit.Setup();
-        enemyUnit.Setup();
+        playerUnit.Setup(team.getMemberTeam());
+        enemyUnit.Setup(wildEnemie);
         playerHud.SetData(playerUnit.Enemie);
         enemyHud.SetData(enemyUnit.Enemie);
         dialogBox.SetMoveNames(playerUnit.Enemie.Moves);
@@ -47,7 +52,7 @@ public class BattleSystem : MonoBehaviour
 
         state =BattleState.Busy;
 
-        var move = playerUnit.Enemie.Moves[currentAction];
+        var move = playerUnit.Enemie.Moves[currentMove];
         move.Pp--;
         yield return dialogBox.TypeDialog($"{playerUnit.Enemie.Base.NameEnemy} ha usado {move.Base.Name}");
 
@@ -126,7 +131,7 @@ public class BattleSystem : MonoBehaviour
                 PlayerMove();
             }
             else if(currentAction ==1){
-
+                OnBattleOver(false);
             }
         }
     }

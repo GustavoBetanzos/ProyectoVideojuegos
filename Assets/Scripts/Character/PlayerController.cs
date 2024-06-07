@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public LayerMask solidObjectsLayer;
     public LayerMask stoneLayer;    
+    public LayerMask flowersLayer;    
+    public LayerMask interactableLayer;    
 
     public event Action OnEncountered;
     private bool isMoving;
@@ -40,6 +42,20 @@ public class PlayerController : MonoBehaviour
         }
         }
         animator.SetBool("isMoving", isMoving);
+
+        if(Input.GetKeyDown(KeyCode.Return)){
+            Interact();
+        }
+    }
+
+    void Interact(){
+        var facingDir = new Vector3(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
+        var interactPos = transform.position + facingDir;
+        Debug.DrawLine(transform.position, interactPos, Color.green, 0.5f);
+        var collider=Physics2D.OverlapCircle(interactPos, 0.3f, interactableLayer);
+        if (collider != null){
+            collider.GetComponent<Interactable>()?.Interact();
+        }
     }
 
     IEnumerator Move (Vector3 targetPos){
@@ -54,7 +70,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private bool isWalkable(Vector3 targetPos){
-        if(Physics2D.OverlapCircle(targetPos, 0.2f, solidObjectsLayer)!=null){
+        if(Physics2D.OverlapCircle(targetPos, 0.2f, solidObjectsLayer | interactableLayer)!=null){
             return false;
         }
         return true;
@@ -66,6 +82,12 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("isMoving",false);
                 OnEncountered();
             }
-        }   
+        }  
+        if(Physics2D.OverlapCircle(transform.position, 0.2f, flowersLayer) !=null){
+            if (UnityEngine.Random.Range(1, 101)<=10){
+                animator.SetBool("isMoving",false);
+                OnEncountered();
+            }
+        }    
     }
 }

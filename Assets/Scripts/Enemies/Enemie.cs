@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Enemie
 {
-    public EnemiesBase Base { get; set; }
-    public int Level { get; set; }
+    [SerializeField] EnemiesBase _base;
+    [SerializeField] int level;
+    public EnemiesBase Base { 
+        get{
+            return _base;
+        }  
+    }
+    public int Level { 
+        get{
+            return level;
+        }
+    }
     public int HP { get; set; }
     public List<Move> Moves { get; set; }
 
-    public Enemie(EnemiesBase eBase, int eLevel)
+    public void Init()
     {
-        Base = eBase;
-        Level = eLevel;
         HP = MaxHp;
 
         Moves = new List<Move>();

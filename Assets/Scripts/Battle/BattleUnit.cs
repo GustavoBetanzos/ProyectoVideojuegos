@@ -6,8 +6,6 @@ using DG.Tweening;
 
 public class BattleUnit : MonoBehaviour
 {
-    [SerializeField] EnemiesBase _base;
-    [SerializeField] int level;
     [SerializeField] bool isPlayerUnit;
     
     public Enemie Enemie{get; set;}
@@ -22,8 +20,8 @@ public class BattleUnit : MonoBehaviour
         originalColor = image.color;
     }
 
-    public void Setup(){
-        Enemie = new Enemie(_base, level);
+    public void Setup(Enemie enemie){
+        Enemie = enemie;
         if(isPlayerUnit){
             image.sprite = Enemie.Base.FrontSprite;
         }
@@ -32,6 +30,7 @@ public class BattleUnit : MonoBehaviour
         
         PlayerEnterAnimation();
     }
+
 
     public void PlayerEnterAnimation(){
         if(isPlayerUnit){

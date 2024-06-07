@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3613dc3b702e5547bd2edd72c29e041, type: 3}
-  m_Name: SoyYo
+  m_Script: {fileID: 11500000, guid: 94720f6920781834dabaaa7780d9e603, type: 3}
+  m_Name: Victoria Segura
   m_EditorClassIdentifier: 
-  enemyName: 
-  description: 
-  frontSprite: {fileID: 0}
-  maxHp: 0
-  attack: 0
-  defense: 0
-  learnableMoves: []
+  moveName: Victoria Segura
+  power: 1000
+  accuracy: 100
+  pp: 100
