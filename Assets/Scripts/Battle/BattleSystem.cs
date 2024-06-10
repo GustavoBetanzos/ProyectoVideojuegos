@@ -65,13 +65,32 @@ public class BattleSystem : MonoBehaviour
         yield return enemyHud.UpdateHP();
         yield return ShowDamageDetails(damageDetails);
         if (damageDetails.Fainted){
-            yield return dialogBox.TypeDialog($"{enemyUnit.Enemie.Base.NameEnemy} ha sido vencido.");
-            enemyUnit.PlayFaintAnimation();
-            yield return new WaitForSeconds(2f);
-            OnBattleOver(true);
+            yield return HandlePokemonFainted(enemyUnit);
         }else{
             StartCoroutine(EnemyMove());
         }
+    }
+
+    IEnumerator HandlePokemonFainted(BattleUnit faintedUnit){
+        yield return dialogBox.TypeDialog($"{faintedUnit.Enemie.Base.NameEnemy} ha sido vencido.");
+            faintedUnit.PlayFaintAnimation();
+            yield return new WaitForSeconds(2f);
+                int expYield = faintedUnit.Enemie.Base.ExpYield;
+                int enemyLevel = faintedUnit.Enemie.Level;
+                //int expGain = Mathf.FloorToInt((expYield * enemyLevel)/5);
+                int expGain = 5;
+                playerUnit.Enemie.Exp += expGain;
+                yield return dialogBox.TypeDialog($"{playerUnit.Enemie.Base.NameEnemy} ha obtenido {expGain} puntos de experiencia.");
+                yield return playerHud.SetExpSmooth();
+
+                while(playerUnit.Enemie.CheckForLevelUp()){
+                    playerHud.SetLevel();
+                    yield return dialogBox.TypeDialog($"{playerUnit.Enemie.Base.NameEnemy} ha subido a nivel {playerUnit.Enemie.Level}.");
+                    yield return playerHud.SetExpSmooth(true);
+                }
+
+                yield return new WaitForSeconds(1f);
+                OnBattleOver(true);
     }
 
     IEnumerator EnemyMove(){
@@ -86,8 +105,7 @@ public class BattleSystem : MonoBehaviour
         playerUnit.PlayHitAnimation();
         
 
-        var damageDetails = playerUnit.Enemie.TakeDamage(move, playerUnit.Enemie); //cambiar el ultimo player por enemy
-        yield return playerHud.UpdateHP();
+        var damageDetails = playerUnit.Enemie.TakeDamage(move, playerUnit.Enemie); 
         yield return ShowDamageDetails(damageDetails);
         if (damageDetails.Fainted){
             yield return dialogBox.TypeDialog($"{playerUnit.Enemie.Base.NameEnemy} ha sido vencido.");

@@ -16,7 +16,13 @@ public class EnemiesBase : ScriptableObject
     [SerializeField] int attack;
     [SerializeField] int defense;
 
+    [SerializeField] int expYield;
+
     [SerializeField] List<LearnableMove> learnableMoves;
+
+    public int GetExpForLevel (int level){
+        return 5+(4*(level*level*level)/5) ;
+    }
 
     public string NameEnemy
     {
@@ -52,6 +58,8 @@ public class EnemiesBase : ScriptableObject
     {
         get { return learnableMoves; }
     }
+
+    public int ExpYield => expYield;
 }
 
 [System.Serializable]
@@ -69,4 +77,6 @@ public class LearnableMove
     {
         get { return level; }
     }
+
+
 }

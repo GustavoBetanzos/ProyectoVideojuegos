@@ -78,13 +78,13 @@ public class PlayerController : MonoBehaviour
 
     private void CheckForEncounters(){
         if(Physics2D.OverlapCircle(transform.position, 0.2f, stoneLayer) !=null){
-            if (UnityEngine.Random.Range(1, 101)<=10){
+            if (UnityEngine.Random.Range(1, 101)<=20){
                 animator.SetBool("isMoving",false);
                 OnEncountered();
             }
         }  
         if(Physics2D.OverlapCircle(transform.position, 0.2f, flowersLayer) !=null){
-            if (UnityEngine.Random.Range(1, 101)<=10){
+            if (UnityEngine.Random.Range(1, 101)<=20){
                 animator.SetBool("isMoving",false);
                 OnEncountered();
             }
